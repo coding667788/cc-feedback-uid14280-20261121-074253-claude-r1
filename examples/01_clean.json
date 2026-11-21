@@ -1,0 +1,20 @@
+{
+  "case_id": "demo-clean",
+  "media": [
+    {"id": "MED-SECRET-071", "class": "SECRET"},
+    {"id": "MED-TOOL-114", "class": "TOOL"},
+    {"id": "MED-AUDIT-003", "class": "AUDIT"}
+  ],
+  "stations": [
+    {"id": "WS-NORTH-1", "classes": ["SECRET", "TOOL", "AUDIT"]},
+    {"id": "WS-SOUTH-2", "classes": ["SECRET", "TOOL"]}
+  ],
+  "conflicts": [["SECRET", "TOOL"]],
+  "events": [
+    {"type": "connection", "id": "conn-c1", "media": "MED-SECRET-071", "station": "WS-NORTH-1", "device": "DEVC-77", "gen": 0, "t": 1000, "seq": 1, "channel": 1},
+    {"type": "authorization", "id": "auth-a1", "media": "MED-SECRET-071", "station": "WS-NORTH-1", "device": "DEVC-77", "gen": 0, "t": 1000, "valid_until": 1400, "seq": 1, "channel": 2},
+    {"type": "connection", "id": "conn-c2", "media": "MED-AUDIT-003", "station": "WS-NORTH-1", "device": "DEVC-77", "gen": 0, "t": 1100, "seq": 2, "channel": 1},
+    {"type": "authorization", "id": "auth-a2", "media": "MED-AUDIT-003", "station": "WS-NORTH-1", "device": "DEVC-77", "gen": 0, "t": 1100, "valid_until": 1600, "seq": 2, "channel": 2},
+    {"type": "watermark", "id": "wm-1", "t": 1700, "seq": 1, "channel": 9}
+  ]
+}

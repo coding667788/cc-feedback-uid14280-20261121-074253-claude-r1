@@ -1,0 +1,18 @@
+{
+  "case_id": "demo-mutex",
+  "media": [
+    {"id": "MED-SECRET-071", "class": "SECRET"},
+    {"id": "MED-TOOL-114", "class": "TOOL"}
+  ],
+  "stations": [
+    {"id": "WS-NORTH-1", "classes": ["SECRET", "TOOL"]}
+  ],
+  "conflicts": [["SECRET", "TOOL"]],
+  "events": [
+    {"type": "connection", "id": "conn-c1", "media": "MED-SECRET-071", "station": "WS-NORTH-1", "device": "DEVC-77", "gen": 0, "t": 1000, "seq": 1, "channel": 1},
+    {"type": "authorization", "id": "auth-a1", "media": "MED-SECRET-071", "station": "WS-NORTH-1", "device": "DEVC-77", "gen": 0, "t": 1000, "valid_until": 1500, "seq": 1, "channel": 2},
+    {"type": "connection", "id": "conn-c2", "media": "MED-TOOL-114", "station": "WS-NORTH-1", "device": "DEVC-77", "gen": 0, "t": 1200, "seq": 2, "channel": 1},
+    {"type": "authorization", "id": "auth-a2", "media": "MED-TOOL-114", "station": "WS-NORTH-1", "device": "DEVC-77", "gen": 0, "t": 1200, "valid_until": 1800, "seq": 2, "channel": 2},
+    {"type": "watermark", "id": "wm-1", "t": 2000, "seq": 1, "channel": 9}
+  ]
+}

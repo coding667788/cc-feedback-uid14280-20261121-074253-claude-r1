@@ -1,0 +1,19 @@
+{
+  "case_id": "demo-migration",
+  "media": [
+    {"id": "MED-SECRET-071", "class": "SECRET"}
+  ],
+  "stations": [
+    {"id": "WS-NORTH-1", "classes": ["SECRET"]},
+    {"id": "WS-SOUTH-2", "classes": ["SECRET"]}
+  ],
+  "conflicts": [],
+  "events": [
+    {"type": "connection", "id": "conn-c1", "media": "MED-SECRET-071", "station": "WS-NORTH-1", "device": "DEVC-77", "gen": 0, "t": 1000, "seq": 1, "channel": 1},
+    {"type": "authorization", "id": "auth-a1", "media": "MED-SECRET-071", "station": "WS-NORTH-1", "device": "DEVC-77", "gen": 0, "t": 1000, "valid_until": 2000, "seq": 1, "channel": 2},
+    {"type": "connection", "id": "conn-c1-end", "media": "MED-SECRET-071", "station": "WS-NORTH-1", "device": "DEVC-77", "gen": 0, "op": "disconnect", "t": 1500, "seq": 2, "channel": 1},
+    {"type": "connection", "id": "conn-c2", "media": "MED-SECRET-071", "station": "WS-SOUTH-2", "device": "DEVC-77", "gen": 1, "t": 1500, "seq": 3, "channel": 1},
+    {"type": "authorization", "id": "auth-a2", "media": "MED-SECRET-071", "station": "WS-SOUTH-2", "device": "DEVC-77", "gen": 1, "t": 1500, "valid_until": 2400, "seq": 2, "channel": 2},
+    {"type": "watermark", "id": "wm-1", "t": 2500, "seq": 1, "channel": 9}
+  ]
+}

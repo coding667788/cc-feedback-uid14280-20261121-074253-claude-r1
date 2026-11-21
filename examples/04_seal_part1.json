@@ -1,0 +1,16 @@
+{
+  "case_id": "demo-late-rollback",
+  "media": [
+    {"id": "MED-SECRET-071", "class": "SECRET"},
+    {"id": "MED-TOOL-114", "class": "TOOL"}
+  ],
+  "stations": [
+    {"id": "WS-NORTH-1", "classes": ["SECRET", "TOOL"]}
+  ],
+  "conflicts": [["SECRET", "TOOL"]],
+  "events": [
+    {"type": "connection", "id": "l-c1", "media": "MED-SECRET-071", "station": "WS-NORTH-1", "device": "DEVC-77", "gen": 0, "t": 1000, "seq": 1, "channel": 1},
+    {"type": "authorization", "id": "l-a1", "media": "MED-SECRET-071", "station": "WS-NORTH-1", "device": "DEVC-77", "gen": 0, "t": 1000, "valid_until": 1800, "seq": 1, "channel": 2},
+    {"type": "watermark", "id": "l-wm1", "t": 1200, "seq": 1, "channel": 9}
+  ]
+}
